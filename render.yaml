@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: training-course-platform
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+      - key: SESSION_DAYS
+        value: 7
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL_MODE
+        value: require
+      - key: STORAGE_PROVIDER
+        value: r2
+      - key: APP_BASE_URL
+        sync: false
+      - key: COURSE_TITLE
+        value: 上岸仓培训课程收录平台
+      - key: COURSE_SUBTITLE
+        value: 课程列表、视频、课件、作业提交的统一收录平台
+      - key: R2_ACCOUNT_ID
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: R2_BUCKET
+        sync: false
