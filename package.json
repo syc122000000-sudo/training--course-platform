@@ -1,0 +1,18 @@
+{
+  "name": "training-course-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Training course portal with student and admin workflows.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node frontend/server.mjs",
+    "start": "node frontend/server.mjs",
+    "check:syntax": "node --check frontend/server.mjs && node --check backend/config.mjs && node --check backend/database.mjs && node --check backend/storage.mjs"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}
